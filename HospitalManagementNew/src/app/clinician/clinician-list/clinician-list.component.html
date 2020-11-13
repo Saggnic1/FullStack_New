@@ -1,0 +1,67 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-2">
+         
+        </div>
+        <div class="col-8 bg-light" >
+          <!--Search bar and drop down header logic stats-->
+            <p class="text-center font-weight-bold">Clinician Details</p><br>
+            <form [formGroup]="searchForm"><div class="form-group">
+            <div class="container">
+                <div class="row">
+                 
+                     <div class="col-5">
+                       <div class="row">
+                       <div class="col">
+                        <label for="specialization">Specialization &nbsp;</label>
+                        <select id="specialization" name="specialization"
+
+                        #mySelect (change)='onOptionsSelected(mySelect.value)'
+                        >
+                        <option value="all">All</option>
+                          <option value="Cardio">Cardiologist</option>
+                          <option value="Neuro">NeuroLogist</option>
+                          <option value="Dentist">Dentist</option>
+                          <option value="Ophthalmo">Ophthalmologist</option>
+                        </select>
+                       </div>
+                      </div>
+                     </div>
+                    
+                    <!-- <div class="col-1"></div> -->
+                    <div class="col-1">Search</div>
+<div class="col-1"> <input type="search" placeholder="Search" 
+  
+  [(ngModel)]="searchText" [ngModelOptions]="{standalone: true}"
+  >
+<!--(input)="onSearchChange($event.target.value)"-->
+</div>
+<div class="col-3"></div>
+<div class="col-1"><button type="button" class="btn btn-success" (click)="onAddNewClinician()">Add Clinician</button></div>
+
+                </div></div>
+            </div></form>
+<!--Search bar and drop down header logic ends-->
+<!--Viewn Clinician Logic starts-->
+<br><hr><br>
+<div class="container">
+<div class="row">
+
+<app-clinician-item class="col-md-6" 
+*ngFor ="let clinician of clinicians |appFilter:searchText " 
+[clinician]="clinician" (deleteEvent)="onDEleteEvent()">
+</app-clinician-item>
+
+</div>
+</div>
+</div>
+
+<!--Viewn Clinician Logic ends-->
+              </div>
+        
+        <div class="col-2">
+         
+        </div></div>
+      
+

@@ -1,0 +1,54 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-2">
+         
+        </div>
+        <div class="col-8 bg-light" >
+          <!--Search bar and drop down header logic stats-->
+            <p class="text-center font-weight-bold">Patient Details</p><br>
+            <form [formGroup]="searchForm"><div class="form-group">
+            <div class="container">
+                <div class="row border">
+                 
+                     <div class="col-5">
+                       <div class="row">
+                       <div class="col-6">Search Patient &nbsp;</div>
+                       <div class="col-6"><input type="search" placeholder="Search"
+                        [(ngModel)]="searchText" [ngModelOptions]="{standalone: true}"
+                        ></div>
+                      </div>
+                     </div>
+                    
+                    <!-- <div class="col-1"></div> -->
+                    <div class="col-1"></div>
+<div class="col-1"></div>
+<div class="col-2"></div>
+<div class="col-3"><button type="button" class="btn btn-success" (click)="onAddNewPatient()">Add Patient</button></div>
+
+                </div></div>
+            </div></form>
+<!--Search bar and drop down header logic ends-->
+<!--Viewn Clinician Logic starts-->
+<br><hr><br>
+<div class="container">
+<div class="row">
+
+<app-patient-item class="col-md-12" 
+*ngFor ="let patient of patients |appFilter:searchText" 
+[patient]="patient"
+(deletedPatientEvent)="patientDeletedEvent()">
+</app-patient-item>
+
+</div>
+</div>
+</div>
+
+<!--Viewn Clinician Logic ends-->
+              </div>
+        
+        <div class="col-2">
+         
+        </div></div>
+      
+

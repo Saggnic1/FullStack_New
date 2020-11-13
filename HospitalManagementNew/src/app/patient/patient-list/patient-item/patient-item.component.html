@@ -1,0 +1,33 @@
+
+
+<div class="border">
+<div class="container">
+    <div class="row">
+        <div class="col-1">
+
+        </div>
+        <div class="col-10">
+            <br>
+            <div><strong>Patient Id</strong>: {{patient.id}}</div><br>
+            <div><strong>FullName</strong>: {{patient.fullName}}</div><br>
+            <div><strong>Gender</strong>: {{patient.gender}}</div><br>
+            <div><strong>Phone</strong>: {{patient.phoneNumber}}</div><br>
+            <div><strong>Address</strong>: {{patient.address}}</div><br><br><br>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-4"> <button type="button" class="btn btn-success" (click)="onEditClick()">Modify</button></div>
+                    <div class="col-4"> <button type="button" class="btn btn-success float-right" (click)="onDeletePatient()">Delete</button></div>
+                    <div class="col-2"></div>
+                </div>
+            </div><br>
+           
+        </div>
+
+        <div class="col-1">
+
+        </div>
+    </div>
+</div>
+</div><br>

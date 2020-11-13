@@ -1,0 +1,114 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-2">
+         
+        </div>
+        <div class="col-8 bg-light" >
+          <!--Clinician Details Form logic stats-->
+            <p class="text-center"><strong>Hospital Management System</strong> </p><hr>
+
+            <div class="container">
+                <div class="row">
+                    
+                    <div class="col-3">Search details</div>
+                    
+                    <div class="col-3"><input type="search" placeholder="Search"
+                      [(ngModel)]="searchText" [ngModelOptions]="{standalone: true}"
+                      ></div>
+                    <div class="col-1"></div>
+                    <div class="col-1"><button type="button" class="btn btn-success">Search</button></div>
+                    <div class="col-4"></div>
+                </div>
+            </div>
+            <br>
+
+            <div class="container border">
+                <div class="row">
+                    <div class="col-4 column"></div>
+                    <div class="col-4 column">Available Clinician</div>
+                <hr>
+                <div class="col-4 column"></div>
+            </div>
+                  <br>  
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <table class="table table-striped">
+               
+                <thead>
+                  <tr>
+                    <th scope="col">Clinician Name</th>
+                    <th scope="col">Proficiency</th>
+                    <th scope="col">Timings</th>
+                    <th scope="col">Modify</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let clinician of clinicians |appFilter:searchText">
+                        <td >{{clinician.fullName}}</td>
+                        <td>{{clinician.proficiency}}</td>
+                        <td>{{clinician.timings}}</td>
+                        <td><a routerLink="../clinician-detail/{{clinician.id}}" >Edit</a></td>
+                      </tr>
+                </tbody>
+              </table>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+                <div class="row"></div>
+            </div>
+
+
+<br>
+
+
+
+            <div class="container border">
+                <div class="row">
+                    <div class="col-4 column"></div>
+                    <div class="col-4 column">Patients Registered</div>
+                <hr>
+                <div class="col-4 column"></div>
+            </div>
+                  <br>  
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                        <table class="table table-striped">
+               
+                <thead>
+                  <tr>
+                    <th scope="col">Patient Name</th>
+                    <th scope="col">Clinician</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Modify</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor = "let patient of patients |appFilter:searchText">
+                    <td >{{patient.fullName}}</td>
+                    <td>{{patient.clinician}}</td>
+                    <td>{{patient.phoneNumber}}</td>
+                    <td><a routerLink="../patient-detail/{{patient.id}}" >Edit</a></td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+                <div class="row"></div>
+            </div>
+            
+              </div>
+
+              
+        </div>
+        <div class="col-2">
+         
+        </div>
+      </div>
+  
+  
+  

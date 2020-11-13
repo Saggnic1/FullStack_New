@@ -1,0 +1,8 @@
+.border{
+    border: black;
+    border-width: 2px;
+}
+
+.btn{
+    text-emphasis-color: black;
+}

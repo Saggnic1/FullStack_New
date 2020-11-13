@@ -1,0 +1,40 @@
+.required
+{
+    color: red;
+}
+
+label {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 18px;
+    color: #333;
+    height: 20px;
+    width: 200px;
+    margin-top: 10px;
+    margin-left: 10px;
+    text-align: right;
+    clear: both;
+    float:left;
+    margin-right:15px;
+}
+input {
+    height: 20px;
+    width: 300px;
+    border: 1px solid #000;
+    margin-top: 10px;
+    float: left;
+}
+.btn-space {
+    margin-right: 5px;
+    color: chartreuse;
+}
+
+.btn-toolbar .btn{
+    margin-right: 5px;
+}
+.btn-toolbar .btn:last-child{
+    margin-right: 0;
+}
+
+input.ng-invalid.ng-touched{
+    border: 1px solid red;
+}

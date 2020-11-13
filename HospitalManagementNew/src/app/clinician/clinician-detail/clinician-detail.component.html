@@ -1,0 +1,159 @@
+
+<div class="container">
+  <div class="row">
+      <div class="col-2">
+       
+      </div>
+      <div class="col-8 bg-light" >
+        <!--Clinician Details Form logic stats-->
+          <p class="text-center"><strong>Clinician Enrollment</strong> </p><hr>
+          <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                          <div  *ngIf ="hasBeenSubmitted" class="alert alert-success" role="alert">
+                            Form has been submitted!!!
+                          </div>
+                          <div  *ngIf ="hasError" class="alert alert-warning" role="alert">
+                            SomeThing Went Wrong!!!
+                          </div>
+                          <div class="form-group">
+                              <label class="control-label" for="name">Full Name
+                                  <span class="required">*</span>
+                              </label>
+                              <input type="text" id="name"  formControlName="full_name" required="required" class="form-control">
+                              <!-- <div class ="form-group" *ngIf="!signupForm.get('full_name').valid && signupForm.get('full_name').touched">
+                                  Name is required.
+                                </div>  -->
+                          </div>
+                           
+                          <!--Gender dropdown-->
+                          <div class="form-group"><br><br>
+                              <label class="control-label" for="gender">Gender
+                              </label>
+                              <select id="gender" formControlName="gender" class="form-control" style="width: 35%" >
+                                  <option value="Male">Male</option>
+                                  <option value="Female">Female</option>
+                                  <option value="Other">Other</option>
+                              </select>
+                          </div>
+                          
+                  
+                          <div class="form-group">
+                              <label class="control-label" for="age">Age
+                              </label>
+                              <input type="number" id="age"  formControlName="age" required="required" class="form-control">
+                          </div>
+                  
+                  
+                          <div class="form-group">
+                              <label class="control-label" for="phone">Phone <span class="required">*</span>
+                              </label>
+                              <input type="number" id="phone"  formControlName="phone_number" required="required" class="form-control">
+                              <!-- <div class ="form-group" *ngIf="!signupForm.get('phone_number').valid && signupForm.get('phone_number').touched">
+                                  PhoneNumber is required.
+                                </div>  -->
+                          </div>
+                  
+                          <!-- <div class="form-group">
+                              <label class="control-label" for="specialization" >Specialization
+                                  <span class="required">*</span>
+                              </label>
+                              <input placeholder="Cardio/Neuro/Dentist/Opthalmo" type="text" id="specialization"  formControlName="specialization" required="required" class="form-control">
+                              
+                          </div> -->
+
+                          <div class="form-group"><br><br>
+                            <label class="control-label" for="specialization" >Specialization
+                              <span class="required">*</span>
+                          </label>
+                          <select id="specialization" name="specialization"
+                          formControlName="specialization" required="required" class="form-control" style="width: 35%"
+                        >
+                        <option value="all">All</option>
+                          <option value="Cardio">Cardiologist</option>
+                          <option value="Neuro">NeuroLogist</option>
+                          <option value="Dentist">Dentist</option>
+                          <option value="Ophthalmo">Ophthalmologist</option>
+                        </select>
+                          </div>
+                  
+                          <div class="form-group">
+                              <label class="control-label" for="proficiency">Proficiency
+                                  <span class="required">*</span>
+                              </label>
+                              <input type="number" id="proficiency" placeholder="Proficiency b/w 1-5. 5 being best" formControlName="proficiency" required="required" class="form-control">
+                              <!-- <div class ="help-block" *ngIf="!signupForm.get('proficiency').valid && signupForm.get('proficiency').touched">
+                                  proficiency is required.
+                                </div>  -->
+                          </div>
+                  
+                          <div class="form-group">
+                              <label class="control-label" for="address">Address
+                                  <span class="required">*</span>
+                              </label>
+                              <input type="text" id="address"  formControlName="address" required="required" class="form-control">
+                              <!-- <div clas ="help-block" *ngIf="!signupForm.get('address').valid && signupForm.get('address').touched">
+                                  address is required.
+                                </div>  -->
+                          </div>
+                          <div class="form-group">
+                              <label class="control-label" for="timing">Timing
+                                  <span class="required">*</span>
+                              </label>
+                              <input type="text" id="timing"  formControlName="timing" required="required" class="form-control">
+                               
+                          </div>
+                          <!-- <div clas ="help-block" *ngIf="!signupForm.get('timing').valid && signupForm.get('timing').touched">
+                            timing is required.
+                          </div> -->
+                        </div>
+                    </div>
+                               
+      <div class="row"><br><br><br><br></div>
+
+<div class="row">
+  <div class="col">
+      <div class="form-group ">
+      <div class="  control-label text-center">
+          <button type="submit" class="btn btn-success" [disabled]="!signupForm.valid" >
+             Submit
+          </button>
+      </div></div></div>
+<div class="col">
+  <div class="form-group ">
+      <div class=" control-label text-center">
+          <button type="button" class="btn btn-success  " (click)="onFormReset()" >
+            Cancel
+          </button></div>
+      </div>
+      </div>
+  
+  </div>   
+
+     <!-- <div class="form-group" >
+      <div class="form-group">
+          <button class="btn btn-success" type="submit" style="width: 30%">
+           Submit
+          </button>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-success" type="button" style="width: 30%" (click)="onFormReset()">
+            Cancel
+          </button>
+        </div>
+      </div> -->
+
+
+  </div>
+      </form>
+<!--Clinician Details Form logic ends-->
+
+            </div>
+      </div>
+      <div class="col-2">
+       
+      </div>
+    </div>
+
+

@@ -1,0 +1,7 @@
+.your-class input{
+    float:right;
+  }
+  .border{
+    border: black;
+    border-width: 2px;
+  }
